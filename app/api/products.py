@@ -19,3 +19,7 @@ async def read_products():
 )
 async def create_product(product: schemas.CreateProduct):
     return await Product.objects.create(**product.dict())
+
+@router.delete("/{id}", status_code=status.HTTP_204_NO_CONTENT)
+async def delete_product(id: int):
+    return await Product.objects.delete(id=id)

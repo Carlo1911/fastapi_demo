@@ -16,7 +16,6 @@ class CreateProduct(BaseModel):
         title="Precio en dolares",
         description="Precio en dolares del producto",
     )
-    active: bool
 
     @validator("price")
     def user_must_exist(cls, value):
